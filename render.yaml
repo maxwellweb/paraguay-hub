@@ -18,7 +18,6 @@ services:
     name: paraguay-hub-frontend
     runtime: static
     rootDir: frontend
-    plan: free
     buildCommand: yarn install && yarn build
     staticPublishPath: ./dist
 
