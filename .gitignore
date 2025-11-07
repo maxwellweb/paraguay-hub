@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-arg.txt
+.tox/
+.coverage
+.mypy_cache/
+.pytest_cache/
+htmlcov/
+.nox/
+.eggs/
+*.egg
+*.egg-info/
+
+# FastAPI specific
+.env
+db.sqlite3 # Or any other local database files
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.bak
+*.swo
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+*.zip
+*.tar.gz
+
+# Logs
+*.log
