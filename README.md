@@ -6,6 +6,17 @@ Este proyecto es una aplicación web (Landing Page) moderna y tipada, con fuerte
 
 El frontend está construido con la *stack* moderna de **React/Vite** y TypeScript, asegurando robustez, agilidad y facilidad de mantenimiento.
 
+## 🔗 Demos en Vivo
+
+Explora la aplicación desplegada y la documentación de la API:
+
+| Componente | Enlace de Demostración |
+| :--- | :--- |
+| **Frontend (React/Vite)** | [https://paraguay-hub-frontend.onrender.com/](https://paraguay-hub-frontend.onrender.com/) |
+| **Backend (FastAPI Docs)** | [https://paraguay-hub-backend.onrender.com/docs](https://paraguay-hub-backend.onrender.com/docs) |
+
+---
+
 ## 🏗️ Arquitectura y Tecnologías
 
 El proyecto sigue una arquitectura **Frontend-Backend (API)**. El frontend se encarga de la presentación y la lógica de estado, y el *backend* provee los datos a través de *endpoints* RESTful.
@@ -39,6 +50,12 @@ El *backend* de FastAPI actúa como un *proxy* y una capa de abstracción para l
 | **Clima** | **OpenWeatherMap** | Obtención de datos meteorológicos actuales y pronósticos. |
 | **Monedas** | **ExchangeRate-API** | Obtención de tasas de cambio en tiempo real (USD, EUR, BRL, etc.) frente al PYG. |
 | **Cripto** | **CoinGecko** | Obtención de precios en tiempo real de Bitcoin (BTC) y datos de tendencia. |
+
+### ☁️ Despliegue e Infraestructura
+
+| Servicio | Propósito | Uso Específico |
+| :--- | :--- | :--- |
+| **Render** | **Hosting/Despliegue (Deploy)** | Plataforma utilizada para el despliegue continuo (Continuous Deployment) y el alojamiento de los servicios de Backend (FastAPI) y Frontend (React/Vite). |
 
 ---
 
@@ -116,5 +133,15 @@ Asumiremos que tu proyecto de FastAPI tiene una estructura estándar.
     # o yarn dev
     ```
     La aplicación estará disponible, por defecto, en `http://localhost:5173`.
+
+---
+
+## 💖 Soporte y Donaciones
+
+Si este proyecto te ha sido útil, te ha ahorrado tiempo o simplemente aprecias el esfuerzo de código abierto, considera apoyarlo. Tu contribución ayuda a motivarme a desarrollar nuevas funcionalidades o proyectos de aprendizajes como este.
+
+Puedes apoyar el proyecto invitándonos a un café:
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/maxwellweb)
 
 ---
