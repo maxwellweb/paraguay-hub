@@ -14,8 +14,11 @@ EXCHANGE_API_URL = "https://v6.exchangerate-api.com/v6/"
 EXCHANGE_API_KEY = settings.EXCHANGE_RATE_API_KEY
 TARGET_CURRENCY = "PYG"
 BASE_CURRENCY = "USD"
+API_KEY = settings.COINGECKO_API_KEY
 
-async def get_btc_to_usd_rate() -> Optional[float]:
+headers = {"x-cg-demo-api-key": API_KEY}
+
+async def get_btc_to_usd_rate() -> Optional[float]: 
     
     params = {
         "ids": "bitcoin",
@@ -23,7 +26,7 @@ async def get_btc_to_usd_rate() -> Optional[float]:
     }
     async with httpx.AsyncClient() as client:
         try:
-            response = await client.get(BITCOIN_API_URL+"/simple/price", params=params, timeout=10)
+            response = await client.get(BITCOIN_API_URL+"/simple/price", params=params, timeout=10, headers=headers)
             response.raise_for_status()
             data = response.json()
             return data.get("bitcoin", {}).get("usd")
@@ -31,7 +34,7 @@ async def get_btc_to_usd_rate() -> Optional[float]:
             print(f"Error al obtener la tasa de cambio de BTC a USD: {e}")
             return None
 
-async def get_btc_high_low_24h() -> Optional[tuple[float, float]]:
+async def get_btc_high_low_24h() -> Optional[tuple[float, float]]: 
     
     params = {
         "vs_currency": "usd",
@@ -47,7 +50,7 @@ async def get_btc_high_low_24h() -> Optional[tuple[float, float]]:
     }
     async with httpx.AsyncClient() as client:
         try:
-            response = await client.get(BITCOIN_API_URL+"/coins/markets", params=params, timeout=10)
+            response = await client.get(BITCOIN_API_URL+"/coins/markets", params=params, timeout=10, headers=headers)
             response.raise_for_status()
             data = response.json()
             return data[0].get("high_24h"), data[0].get("low_24h"), data[0].get("price_change_percentage_24h")
@@ -55,7 +58,7 @@ async def get_btc_high_low_24h() -> Optional[tuple[float, float]]:
             print(f"Error al obtener la tasa de cambio de BTC a USD: {e}")
             return None
 
-async def get_usd_to_pyg_rate() -> Optional[float]:
+async def get_usd_to_pyg_rate() -> Optional[float]: 
     
     url = f"{EXCHANGE_API_URL}{EXCHANGE_API_KEY}/latest/{BASE_CURRENCY}"
     
@@ -77,7 +80,7 @@ async def get_usd_to_pyg_rate() -> Optional[float]:
             print(f"Error al obtener la tasa de cambio de USD a PYG: {e}")
             return None
     
-async def get_btc_to_pyg_rate() -> Optional[float]:
+async def get_btc_to_pyg_rate() -> Optional[float]: 
     
     url = f"{EXCHANGE_API_URL}{EXCHANGE_API_KEY}/latest/{BASE_CURRENCY}"
 

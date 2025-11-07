@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     # --- Claves de APIs Externas ---
     EXCHANGE_RATE_API_KEY: str
     OPENWEATHERMAP_API_KEY: str
+    COINGECKO_API_KEY: str
     
     # --- Configuración del Caché de Clima ---
     # Tiempo en segundos que los datos del clima serán considerados válidos en la caché
